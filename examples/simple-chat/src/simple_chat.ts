@@ -51,7 +51,8 @@ class ChatUI {
     };
 
     const modelSelector = getElementAndCheck("chatui-select") as HTMLSelectElement;
-    for (let i = 0; i < this.config.model_list.length; ++i) {
+    //for (let i = 0; i < this.config.model_list.length; ++i) {
+    for (let i = 0; i < 1; ++i) {
       const item = this.config.model_list[i];
       const opt = document.createElement("option");
       opt.value = item.local_id;
@@ -60,10 +61,10 @@ class ChatUI {
       modelSelector.appendChild(opt);
     }
     // Append local server option to the model selector
-    const localServerOpt = document.createElement("option");
+    /*const localServerOpt = document.createElement("option");
     localServerOpt.value = "Local Server";
     localServerOpt.innerHTML = "Local Server";
-    modelSelector.append(localServerOpt);
+    modelSelector.append(localServerOpt);*/
     this.selectedModel = modelSelector.value;
     modelSelector.onchange = () => {
       this.onSelectChange(modelSelector);
